@@ -7,7 +7,7 @@
   "scripts": {
     "webpack": "webpack --mode production",
     "dev-server": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --mode development\"",
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d dev-server"
   },
   "author": "Andrés Moraga",
   "license": "ISC",
