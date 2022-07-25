@@ -1,0 +1,45 @@
+#banner-wrapper {
+    $text-transform: 'uppercase', 'lowercase';
+
+    @each $transform in $text-transform {
+        .#{$transform} {
+            text-transform: #{$transform};
+        }
+    }
+
+    $text-align: 'center', 'left', 'right';
+
+    @each $align in $text-align {
+        .text-#{$align} {
+            text-align: #{$align};
+        }
+    }
+
+    .underline {
+        text-decoration: underline;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .no-spacing {
+        margin: 0;
+    }
+
+    sup {
+        font-size: $isi-font-size * .6;
+        vertical-align: baseline;
+        position: relative;
+        top: -0.65em;
+    }
+
+    sub {
+      top: 0.65em;
+    }
+
+    .accent-color {
+        color: $color-emphasize;
+    }
+
+}

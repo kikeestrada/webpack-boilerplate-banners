@@ -1,0 +1,39 @@
+#banner-wrapper {
+	.os-scrollbar-vertical {
+		width: $scrollbar-width;
+		padding: $scrollbar-vertical-spacing $scrollbar-horizontal-spacing;
+
+		position: absolute;
+		right: $scrollbar-position-right;
+		top: $scrollbar-position-top;
+		bottom: $scrollbar-position-bottom;
+
+		z-index: 11;
+
+		background-color: $scrollbar-color;
+
+		border-left: $scrollbar-border-left-width solid $scrollbar-border-left-color;
+	}
+
+	.os-scrollbar-handle {
+		max-height: $scrollbar-handle-height;
+		min-height: $scrollbar-handle-height;
+
+		width: $scrollbar-handle-width;
+
+		@if ( $scrollbar-handle-width > $scrollbar-width ) {
+			margin-left: - ( $scrollbar-handle-width - $scrollbar-width ) / 2
+		}
+
+		border-radius: $scrollbar-handle-radius;
+		background-color: $scrollbar-handle-color;
+
+		cursor: pointer;
+	}
+
+	@if ( $scrollbar-overflow ) {
+		.os-host-overflow {
+			overflow: visible !important;
+		}
+	}
+}

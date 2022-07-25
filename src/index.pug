@@ -1,0 +1,44 @@
+- const projectVars = require("./../config.js");
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+            
+        meta(name="ad.size" content="width="+ projectVars['bannerDimensions']['width'] +",height="+ projectVars['bannerDimensions']['height'])
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+        meta(http-equiv="x-ua-compatible" content="ie=edge")
+
+        title #{projectVars['project']['client']}
+
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.12.0/css/OverlayScrollbars.min.css")
+        style(rel="stylesheet").
+            #banner-wrapper {
+                width: #{projectVars['bannerDimensions']['width'] + 'px'};
+                height: #{projectVars['bannerDimensions']['height'] + 'px'};
+                overflow: hidden;
+                visibility: hidden;
+            }
+    
+    body
+
+        div#banner-wrapper
+            div.canvas
+                include banner-parts/canvas.pug
+            
+            include banner-parts/clickTag-triggers.pug
+
+            include banner-parts/isi.pug
+
+            
+      
+        script(src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.2.4_min.js")
+        script(src="https://s0.2mdn.net/ads/studio/cached_libs/scrolltoplugin_3.2.4_min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.12.0/js/OverlayScrollbars.min.js")
+        
+        include banner-parts/clickTag-urls.pug
+        
+        script(src="./banner-scripts.js")
+        
+  
+  

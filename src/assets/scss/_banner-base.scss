@@ -1,0 +1,128 @@
+* {
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
+
+	&:before, &:after {
+		pointer-events: none;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+#banner-wrapper {
+	display: block;
+	position: relative;
+	width: $banner-width;
+	height: $banner-height;
+
+	overflow: hidden;
+
+	background: $banner-background;
+
+	//experimentar para transiciones mejores
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+
+	&:before {
+		content: '';
+
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		border: 1px solid $banner-border-color;
+
+		z-index: 9999;
+
+		pointer-events: none;
+	}
+}
+
+
+
+.canvas,
+.frame,
+.frame-element,
+.full-banner-exit-trigger {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.frame-element {
+	pointer-events: none;
+}
+
+.exit-trigger {
+	cursor: pointer;
+	opacity: 0;
+
+	position: absolute;
+}
+
+//the hidden class should be use to hide the elements that should appear on canvas from the start of the animation, this will allow you to fade them in at the required frame
+.hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+
+
+.pull-top {
+    transform: translateY(-100%);
+}
+
+.pull-bottom {
+    transform: translateY(100%);
+}
+
+.pull-left {
+    transform: translateX(-100%);
+}
+
+.pull-right {
+    transform: translateX(100%);
+}
+
+.pull-top-right {
+    transform: translate(100%, -100%);
+}
+
+.pull-bottom-right {
+    transform: translate(100%, 100%);
+}
+
+.pull-top-left {
+    transform: translate(-100%, -100%);
+}
+
+.pull-bottom-left {
+    transform: translate(-100%, 100%);
+}
+
+a {
+	cursor: pointer;
+}
+
+//this will help generate the frame elements for the banner, just use the same name of the image on the id of the element and add all names to the list below
+$frame-elements: get('frameImages');
+
+@each $frame-element in $frame-elements {
+	$filename: map-get($frame-element, filename);
+	$extension: map-get($frame-element, extension);
+
+	##{$filename}, .#{$filename} {
+		background: url('./../images/frames/#{$filename}#{$extension}') 0 0 / contain no-repeat;
+	}
+}
+

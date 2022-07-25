@@ -1,0 +1,166 @@
+.isi-container {
+    position: absolute;
+    bottom: $isi-position-bottom;
+    right: 0;
+
+    @if $bw >= 728 {
+        left: auto;
+        border-left: $isi-border;
+    } @else {
+        left: 0;
+        border-top: $isi-border;
+    }
+
+    padding: 0;
+    height: $isi-height;
+    width: $isi-width;
+
+    background-color: $isi-background-color;
+
+    font: #{$isi-font-size}/#{$isi-line-height} $isi-font-family;
+}
+
+.isi-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: $isi-copy-wrapper-height;
+
+    color: $isi-copy-color;
+}
+
+
+
+.isi-copy-wrapper {
+    height: 100%;
+
+    overflow: hidden;
+
+    @if ( $scrollbar-overflow ) {
+        overflow: visible;
+    }
+
+    padding-left: $isi-copy-wrapper-padding-left;
+
+    .isi-copy-inner-wrapper {
+        padding-bottom: $isi-copy-wrapper-padding-bottom;
+        padding-top: $isi-copy-wrapper-padding-top;
+
+        & > :first-child {
+            margin-top: 0;
+        }
+    }
+
+    h3 {
+        font: bold #{$isi-title-font-size}/#{$isi-title-line-height} $isi-font-family;
+
+        color: $isi-title-color;
+
+        margin-top: $isi-title-margin-top;
+
+        & + p {
+            margin-top: $isi-paragraph-margin-top * 0.66;
+        }
+
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        margin-top: $isi-list-first-level-margin-top;
+        padding-left: $isi-list-first-level-padding-left;
+    }
+
+    li {
+        position: relative;
+        letter-spacing: 0;
+
+        margin-top: $isi-list-item-first-level-margin-top;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:before {
+            content: $isi-list-item-first-level-bullet-icon;
+
+            position: absolute;
+            left: $isi-list-item-first-level-bullet-position-left;
+            color: $isi-list-item-first-level-bullet-color;
+            font-size: $isi-list-item-first-level-bullet-font-size;
+        }
+
+        ul {
+            margin-top: $isi-list-second-level-margin-top;
+            padding-left: $isi-list-second-level-padding-left;
+
+            li {
+                margin-top: $isi-list-item-second-level-margin-top;
+
+                &:before {
+                    content: $isi-list-item-second-level-bullet-icon;
+
+                    color: $isi-list-item-second-level-bullet-color;
+
+                    left: $isi-list-item-second-level-bullet-position-left;
+                }
+            }
+        }
+    }
+
+
+    p {
+        margin-top: $isi-paragraph-margin-top;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    a {
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+
+    .small-text {
+        font-size: $isi-small-font-size;
+        line-height: $isi-small-line-height;
+    }
+
+}
+
+.isi-copy {
+    width: 100%;
+    height: 100%;
+    padding-right: $isi-copy-wrapper-padding-right;
+}
+
+.isi-logo {
+    width: $isi-logo-width;
+    height: $isi-logo-height;
+    margin: $isi-logo-margin-top $isi-logo-margin-right $isi-logo-margin-bottom $isi-logo-margin-left;
+
+    & + p {
+        margin-top: $isi-paragraph-margin-top / 3;
+    }
+}
+
+
+.isi-top {
+    position: absolute;
+    top: -18px;
+    width: 300px;
+    height: 18px;
+    cursor: pointer;
+
+    background: url('./../images/isi/top.png') 0 0 / contain no-repeat;
+
+    
+}

@@ -1,0 +1,96 @@
+//banner dimensions
+$bannerDimensions: get('bannerDimensions');
+$bw: map-get($bannerDimensions, width);
+$bh: map-get($bannerDimensions, height);
+
+
+//colors
+$color-white: #fff;
+$color-black: #000;
+$color-gray: #D1D1D1;
+$color-dark-gray: #707070;
+$color-emphasize: #76BC21;
+$color-text: $color-black;
+
+
+//banner
+$banner-width: $bw + px;
+$banner-height: $bh + px;
+$banner-border-color: $color-gray;
+$banner-background: $color-white;
+
+
+//isi
+
+$isi-width: $banner-width;
+$isi-height: 74px;
+$isi-background-color: $color-white;
+$isi-border: 0 none;
+$isi-position-bottom: 0;
+
+$isi-copy-wrapper-height: $isi-height;
+$isi-copy-wrapper-padding-top: 5px;
+$isi-copy-wrapper-padding-bottom: 5px;
+$isi-copy-wrapper-padding-left: 12px;
+$isi-copy-wrapper-padding-right: 20px;
+
+@if $bw == 160 {
+    $isi-copy-wrapper-padding-right: 16px;
+}
+
+$isi-font-family: Arial, sans-serif;
+$isi-font-size: 11px;
+$isi-line-height: 13px;
+$isi-copy-color: $color-text;
+$isi-small-font-size: 8px;
+$isi-small-line-height: 10px;
+
+$isi-list-first-level-margin-top: 6px;
+$isi-list-first-level-padding-left: 15px;
+
+$isi-list-item-first-level-margin-top: 6px;
+$isi-list-item-first-level-bullet-icon: "\2022";
+$isi-list-item-first-level-bullet-color: #76BC21;
+$isi-list-item-first-level-bullet-font-size: 12px;
+$isi-list-item-first-level-bullet-position-left: -10px;
+
+$isi-list-second-level-margin-top: 4px;
+$isi-list-second-level-padding-left: 10px;
+
+$isi-list-item-second-level-margin-top: 4px;
+$isi-list-item-second-level-bullet-icon: "◦";
+$isi-list-item-second-level-bullet-color: #76BC21;
+$isi-list-item-second-level-bullet-position-left: -10px;
+
+$isi-title-font-size: $isi-font-size;
+$isi-title-line-height: $isi-line-height;
+$isi-title-color: #044E59;
+$isi-title-margin-top: 6px;
+
+$isi-paragraph-margin-top: 6px;
+
+$isi-logo-width: 148px;
+$isi-logo-height: 21px;
+$isi-logo-margin-top: 10px;
+$isi-logo-margin-bottom: 0;
+$isi-logo-margin-left: auto;
+$isi-logo-margin-right: 0;
+
+
+//scrollbar & scrollbar handle
+$scrollbar-handle-width: 4px;
+$scrollbar-handle-height: 18px;
+$scrollbar-handle-radius: 4px;
+$scrollbar-handle-color: #707070;
+
+$scrollbar-width: 0;
+$scrollbar-color: #b7b7b7;
+$scrollbar-border-left-width: 0;
+$scrollbar-border-left-color: #b7b7b7;
+$scrollbar-vertical-spacing: 0;
+$scrollbar-horizontal-spacing: 0;
+$scrollbar-position-right: 8px;
+$scrollbar-position-top: 6px;
+$scrollbar-position-bottom: 6px;
+
+$scrollbar-overflow: true;
